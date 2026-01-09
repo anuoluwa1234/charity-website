@@ -8,10 +8,18 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        /* Default Brand Font */
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         
+        /* Personalized Instruction: Times New Roman 12pt for report-style content */
+        .report-content {
+            font-family: "Times New Roman", Times, serif !important;
+            font-size: 12pt !important;
+        }
+        
         .glass-nav {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
         }
@@ -22,7 +30,18 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Prevent scrolling when mobile menu is open */
+        /* Standard Mobile Menu Styles (Matched to index.html) */
+        #mobileMenu {
+            transition: all 0.3s ease-in-out;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-10px);
+        }
+        #mobileMenu.active {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
         .overflow-hidden { overflow: hidden; }
     </style>
 </head>
@@ -43,17 +62,19 @@
                 <a href="donate.html" class="bg-gray-900 text-white px-7 py-3 rounded-full hover:bg-emerald-600 transition-all shadow-lg">Donate Now</a>
             </div>
 
-            <button id="menu-btn" onclick="toggleMobileMenu()" class="lg:hidden text-gray-900 text-2xl focus:outline-none z-50">
+            <button id="menu-btn" onclick="toggleMobileMenu()" class="lg:hidden text-gray-900 text-2xl focus:outline-none z-50 p-2">
                 <i id="menu-icon" class="fas fa-bars"></i>
             </button>
         </div>
         
-        <div id="mobileMenu" class="fixed inset-0 bg-white z-40 hidden flex-col items-center justify-center space-y-8 text-center p-6 lg:hidden">
-            <a href="index.html" onclick="toggleMobileMenu()" class="text-3xl font-bold hover:text-emerald-600">Home</a>
-            <a href="about.html" onclick="toggleMobileMenu()" class="text-3xl font-bold text-emerald-600">Our Mission</a>
-            <a href="projects.html" onclick="toggleMobileMenu()" class="text-3xl font-bold hover:text-emerald-600">Projects</a>
-            <a href="contact.html" onclick="toggleMobileMenu()" class="text-3xl font-bold hover:text-emerald-600">Contact</a>
-            <a href="donate.html" onclick="toggleMobileMenu()" class="w-full max-w-xs bg-emerald-600 text-white py-4 rounded-xl text-xl font-bold">Donate Now</a>
+        <div id="mobileMenu" class="absolute top-full left-0 w-full bg-white border-b border-gray-200 shadow-xl lg:hidden z-40">
+            <div class="flex flex-col p-6 space-y-4">
+                <a href="index.html" class="text-lg font-semibold text-gray-800 hover:text-emerald-600">Home</a>
+                <a href="about.html" class="text-lg font-semibold text-emerald-600">Our Mission</a>
+                <a href="projects.html" class="text-lg font-semibold text-gray-800 hover:text-emerald-600">Projects</a>
+                <a href="contact.html" class="text-lg font-semibold text-gray-800 hover:text-emerald-600">Contact</a>
+                <a href="donate.html" class="bg-emerald-600 text-white text-center py-3 rounded-xl font-bold shadow-md">Donate Now</a>
+            </div>
         </div>
     </nav>
 
@@ -100,8 +121,6 @@
             </div>
         </div>
     </section>
-
-    
 
     <section class="py-24 bg-white">
         <div class="container mx-auto px-6">
@@ -168,23 +187,20 @@
     </footer>
 
     <script>
+        // Updated logic to match index.html dropdown behavior
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
             const menuIcon = document.getElementById('menu-icon');
-            const body = document.body;
+            const isOpened = menu.classList.contains('active');
 
-            menu.classList.toggle('hidden');
-            menu.classList.toggle('flex');
-
-            // Handle Icon Toggle (Bars vs X)
-            if (menu.classList.contains('hidden')) {
-                menuIcon.classList.remove('fa-times');
-                menuIcon.classList.add('fa-bars');
-                body.classList.remove('overflow-hidden');
-            } else {
+            if (!isOpened) {
+                menu.classList.add('active');
                 menuIcon.classList.remove('fa-bars');
                 menuIcon.classList.add('fa-times');
-                body.classList.add('overflow-hidden');
+            } else {
+                menu.classList.remove('active');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
             }
         }
     </script>

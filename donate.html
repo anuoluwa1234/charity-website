@@ -8,10 +8,18 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        /* Default Brand Font */
         body { font-family: 'Inter', sans-serif; }
         
+        /* Personalized Instruction: Times New Roman 12pt for report-style content */
+        .report-content {
+            font-family: "Times New Roman", Times, serif !important;
+            font-size: 12pt !important;
+        }
+        
         .glass-nav {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
         }
@@ -25,7 +33,18 @@
             transform: translateY(-8px);
         }
 
-        /* Prevent scrolling when mobile menu is open */
+        /* Mobile Menu Styles Matched to index.html */
+        #mobileMenu {
+            transition: all 0.3s ease-in-out;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-10px);
+        }
+        #mobileMenu.active {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
         .overflow-hidden { overflow: hidden; }
     </style>
 </head>
@@ -46,105 +65,103 @@
                 <a href="donate.html" class="bg-gray-900 text-white px-7 py-3 rounded-full hover:bg-emerald-600 transition-all shadow-lg">Donate Now</a>
             </div>
 
-            <button id="menu-btn" onclick="toggleMobileMenu()" class="lg:hidden text-gray-900 text-2xl focus:outline-none z-50">
+            <button id="menu-btn" onclick="toggleMobileMenu()" class="lg:hidden text-gray-900 text-2xl focus:outline-none z-50 p-2">
                 <i id="menu-icon" class="fas fa-bars"></i>
             </button>
         </div>
         
-        <div id="mobileMenu" class="fixed inset-0 bg-white z-40 hidden flex-col items-center justify-center space-y-8 text-center p-6 lg:hidden">
-            <a href="index.html" onclick="toggleMobileMenu()" class="text-3xl font-bold">Home</a>
-            <a href="about.html" onclick="toggleMobileMenu()" class="text-3xl font-bold">Our Mission</a>
-            <a href="projects.html" onclick="toggleMobileMenu()" class="text-3xl font-bold">Projects</a>
-            <a href="contact.html" onclick="toggleMobileMenu()" class="text-3xl font-bold">Contact</a>
-            <a href="donate.html" onclick="toggleMobileMenu()" class="w-full max-w-xs bg-emerald-600 text-white py-4 rounded-xl text-xl font-bold">Donate Now</a>
+        <div id="mobileMenu" class="absolute top-full left-0 w-full bg-white border-b border-gray-200 shadow-xl lg:hidden z-40">
+            <div class="flex flex-col p-6 space-y-4">
+                <a href="index.html" class="text-lg font-semibold text-gray-800 hover:text-emerald-600">Home</a>
+                <a href="about.html" class="text-lg font-semibold text-gray-800 hover:text-emerald-600">Our Mission</a>
+                <a href="projects.html" class="text-lg font-semibold text-gray-800 hover:text-emerald-600">Projects</a>
+                <a href="contact.html" class="text-lg font-semibold text-gray-800 hover:text-emerald-600">Contact</a>
+                <a href="donate.html" class="bg-emerald-600 text-white text-center py-3 rounded-xl font-bold shadow-md">Donate Now</a>
+            </div>
         </div>
     </nav>
 
-    <section class="py-16 bg-white border-b border-gray-100">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Empower <span class="text-emerald-600">Change</span></h1>
-            <p class="text-gray-500 text-lg max-w-2xl mx-auto">100% of public donations go directly to funding our global projects. Choose an impact level below.</p>
-        </div>
-    </section>
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-6">Small Act, <span class="text-emerald-600">Big Impact</span>.</h1>
+                <p class="text-gray-500 text-xl leading-relaxed">Choose an amount to support our ongoing initiatives in education, clean water, and healthcare for underserved communities.</p>
+            </div>
 
-    
-    <section class="py-20 container mx-auto px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            
-            <div class="lg:col-span-2 space-y-8">
-                <h3 class="text-2xl font-bold">Select Your Impact</h3>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div onclick="selectAmount(25, this)" class="tier-card p-8 bg-white border border-gray-200 rounded-[2rem] text-center shadow-sm">
-                        <span class="block text-4xl font-bold mb-2 text-gray-900">$25</span>
-                        <p class="text-sm text-gray-500">Provides clean water for one child for a month.</p>
-                    </div>
-                    <div onclick="selectAmount(100, this)" class="tier-card p-8 bg-emerald-50 border-2 border-emerald-500 rounded-[2rem] text-center shadow-md relative">
-                        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Most Popular</span>
-                        <span class="block text-4xl font-bold mb-2 text-emerald-700">$100</span>
-                        <p class="text-sm text-emerald-800/70 font-medium">Funds school supplies for a whole classroom.</p>
-                    </div>
-                    <div onclick="selectAmount(500, this)" class="tier-card p-8 bg-white border border-gray-200 rounded-[2rem] text-center shadow-sm">
-                        <span class="block text-4xl font-bold mb-2 text-gray-900">$500</span>
-                        <p class="text-sm text-gray-500">Supports a community-led irrigation project.</p>
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div onclick="selectAmount(25, this)" class="tier-card p-10 bg-white rounded-[2.5rem] border border-gray-200 shadow-sm text-center">
+                    <p class="text-emerald-600 font-bold text-2xl mb-4">$25</p>
+                    <h3 class="text-xl font-bold mb-4">Water Access</h3>
+                    <p class="text-gray-500 text-sm">Provides clean drinking water for one child for an entire year.</p>
                 </div>
-
-                <div class="bg-white p-6 rounded-2xl border border-gray-200 flex items-center gap-4">
-                    <span class="font-bold text-gray-400 text-2xl">$</span>
-                    <input type="number" id="customAmount" oninput="updateFromCustom()" placeholder="Enter custom amount" class="w-full text-xl font-bold focus:outline-none">
+                <div onclick="selectAmount(100, this)" class="tier-card p-10 bg-white rounded-[2.5rem] border-2 border-emerald-500 bg-emerald-50 shadow-lg text-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-emerald-500 text-white text-xs font-bold px-4 py-1 rounded-bl-xl uppercase tracking-widest">Popular</div>
+                    <p class="text-emerald-600 font-bold text-2xl mb-4">$100</p>
+                    <h3 class="text-xl font-bold mb-4">Classroom Kit</h3>
+                    <p class="text-gray-500 text-sm">Supplies a full set of books, uniforms, and tools for a student.</p>
+                </div>
+                <div onclick="selectAmount(500, this)" class="tier-card p-10 bg-white rounded-[2.5rem] border border-gray-200 shadow-sm text-center">
+                    <p class="text-emerald-600 font-bold text-2xl mb-4">$500</p>
+                    <h3 class="text-xl font-bold mb-4">Solar Well</h3>
+                    <p class="text-gray-500 text-sm">Contributes to the maintenance of solar-powered water pumps.</p>
                 </div>
             </div>
 
-            <div class="lg:col-span-1">
-                <div class="bg-gray-900 text-white p-8 rounded-[2.5rem] shadow-2xl sticky top-32">
-                    <h3 class="text-xl font-bold mb-6">Your Contribution</h3>
-                    
-                    <div class="space-y-4 mb-8">
-                        <div class="flex justify-between border-b border-gray-800 pb-4">
-                            <span class="text-gray-400">Total Amount</span>
-                            <span id="summaryAmount" class="font-bold text-emerald-400">$100.00</span>
+            <div class="max-w-2xl mx-auto bg-white rounded-[3rem] p-8 md:p-12 shadow-xl border border-gray-100">
+                <form onsubmit="processDonation(event)" class="space-y-8">
+                    <div class="space-y-4">
+                        <label class="block text-gray-700 font-bold text-lg">Custom Amount</label>
+                        <div class="relative">
+                            <span class="absolute left-6 top-1/2 -translate-y-1/2 text-gray-400 font-bold text-xl">$</span>
+                            <input id="customAmount" type="number" oninput="updateFromCustom()" placeholder="0.00" class="w-full pl-12 pr-6 py-5 bg-slate-50 border-none rounded-2xl text-xl font-bold focus:ring-2 focus:ring-emerald-500">
                         </div>
                     </div>
 
-                    <form onsubmit="processDonation(event)" class="space-y-4">
-                        <input type="text" placeholder="Cardholder Name" class="w-full bg-gray-800 border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-emerald-500 transition" required>
-                        <input type="text" placeholder="Card Number" class="w-full bg-gray-800 border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-emerald-500 transition" required>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-gray-500 uppercase ml-1">Card Number</label>
+                            <input type="text" placeholder="**** **** **** 1234" class="w-full px-6 py-4 bg-slate-50 border-none rounded-xl focus:ring-2 focus:ring-emerald-500" required>
+                        </div>
                         <div class="grid grid-cols-2 gap-4">
-                            <input type="text" placeholder="MM/YY" class="bg-gray-800 border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-emerald-500 transition" required>
-                            <input type="text" placeholder="CVC" class="bg-gray-800 border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-emerald-500 transition" required>
+                            <div class="space-y-2">
+                                <label class="text-sm font-bold text-gray-500 uppercase ml-1">Expiry</label>
+                                <input type="text" placeholder="MM/YY" class="w-full px-4 py-4 bg-slate-50 border-none rounded-xl focus:ring-2 focus:ring-emerald-500" required>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-bold text-gray-500 uppercase ml-1">CVC</label>
+                                <input type="text" placeholder="123" class="w-full px-4 py-4 bg-slate-50 border-none rounded-xl focus:ring-2 focus:ring-emerald-500" required>
+                            </div>
                         </div>
-                        <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-emerald-900/40 mt-6">
-                            Complete Donation
-                        </button>
-                    </form>
-                    
-                    <p class="text-[10px] text-gray-500 mt-6 text-center">
-                        <i class="fas fa-lock mr-1"></i> Secure SSL Encrypted Transaction
-                    </p>
-                </div>
-            </div>
+                    </div>
 
+                    <button type="submit" class="w-full bg-emerald-600 text-white py-6 rounded-2xl font-extrabold text-xl hover:bg-emerald-700 transition-all shadow-lg flex items-center justify-center gap-3">
+                        Donate <span id="summaryAmount">$100.00</span> Now
+                    </button>
+                </form>
+            </div>
         </div>
     </section>
 
     <footer class="bg-gray-950 text-white py-16">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left">
             <div class="col-span-1 md:col-span-2">
                 <h4 class="text-2xl font-bold mb-6">HopeBright</h4>
-                <p class="text-gray-400 max-w-sm mb-6">A non-profit organization dedicated to sustainable development. Your support makes our mission possible.</p>
+                <p class="text-gray-400 max-w-sm mx-auto md:mx-0">Join our mailing list to receive monthly impact reports and transparency audits.</p>
             </div>
             <div>
-                <h5 class="font-bold mb-6">Quick Links</h5>
+                <h5 class="font-bold mb-6">Navigation</h5>
                 <ul class="space-y-4 text-gray-400">
-                    <li><a href="projects.html" class="hover:text-white">Active Projects</a></li>
-                    <li><a href="about.html" class="hover:text-white">Our Board</a></li>
-                    <li><a href="contact.html" class="hover:text-white">Support</a></li>
+                    <li><a href="index.html" class="hover:text-white">Home</a></li>
+                    <li><a href="about.html" class="hover:text-white">Our Story</a></li>
+                    <li><a href="projects.html" class="hover:text-white">Projects</a></li>
                 </ul>
             </div>
             <div>
-                <h5 class="font-bold mb-6">Trust</h5>
-                <p class="text-xs text-gray-500 uppercase tracking-widest">Registered 501(c)3 non-profit organization.</p>
+                <h5 class="font-bold mb-6">Newsletter</h5>
+                <form class="flex max-w-xs mx-auto md:mx-0">
+                    <input type="email" placeholder="Email" class="bg-gray-900 border border-gray-800 rounded-l-lg px-4 py-2 w-full focus:outline-none">
+                    <button class="bg-emerald-600 px-4 py-2 rounded-r-lg hover:bg-emerald-500">→</button>
+                </form>
             </div>
         </div>
         <div class="container mx-auto px-6 mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
@@ -156,19 +173,16 @@
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
             const menuIcon = document.getElementById('menu-icon');
-            const body = document.body;
+            const isOpened = menu.classList.contains('active');
 
-            menu.classList.toggle('hidden');
-            menu.classList.toggle('flex');
-
-            if (menu.classList.contains('hidden')) {
-                menuIcon.classList.remove('fa-times');
-                menuIcon.classList.add('fa-bars');
-                body.classList.remove('overflow-hidden');
-            } else {
+            if (!isOpened) {
+                menu.classList.add('active');
                 menuIcon.classList.remove('fa-bars');
                 menuIcon.classList.add('fa-times');
-                body.classList.add('overflow-hidden');
+            } else {
+                menu.classList.remove('active');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
             }
         }
 
@@ -197,7 +211,8 @@
 
         function processDonation(event) {
             event.preventDefault();
-            window.location.href = 'thank-you.html';
+            window.location.href = 'index.html';
+            alert('Thank you for your generous contribution!');
         }
     </script>
 </body>
