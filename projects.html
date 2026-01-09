@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Initiatives | HopeBright Charity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .project-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-12px);
+        }
+
+        .category-pill:hover {
+            background-color: #10b981;
+            color: white;
+        }
+
+        .overflow-hidden { overflow: hidden; }
+    </style>
+</head>
+<body class="bg-slate-50 text-gray-900">
+
+    <nav class="glass-nav sticky top-0 z-50 border-b border-gray-100">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-emerald-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">H</div>
+                <span class="text-2xl font-bold tracking-tight text-gray-900">HopeBright</span>
+            </div>
+            
+            <div class="hidden lg:flex space-x-10 items-center font-medium text-gray-600">
+                <a href="index.html" class="hover:text-emerald-600 transition">Home</a>
+                <a href="about.html" class="hover:text-emerald-600 transition">Our Mission</a>
+                <a href="projects.html" class="text-emerald-600">Projects</a>
+                <a href="contact.html" class="hover:text-emerald-600 transition">Contact</a>
+                <a href="donate.html" class="bg-gray-900 text-white px-7 py-3 rounded-full hover:bg-emerald-600 transition-all shadow-lg">Donate Now</a>
+            </div>
+
+            <button onclick="toggleMobileMenu()" class="lg:hidden text-gray-900 text-2xl focus:outline-none z-50">
+                <i id="menu-icon" class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <div id="mobileMenu" class="fixed inset-0 bg-white z-40 hidden flex-col items-center justify-center space-y-8 text-center p-6 lg:hidden">
+            <a href="index.html" onclick="toggleMobileMenu()" class="text-3xl font-bold">Home</a>
+            <a href="about.html" onclick="toggleMobileMenu()" class="text-3xl font-bold">Our Mission</a>
+            <a href="projects.html" onclick="toggleMobileMenu()" class="text-3xl font-bold text-emerald-600">Projects</a>
+            <a href="contact.html" onclick="toggleMobileMenu()" class="text-3xl font-bold">Contact</a>
+            <a href="donate.html" onclick="toggleMobileMenu()" class="w-full max-w-xs bg-emerald-600 text-white py-4 rounded-xl text-xl font-bold">Donate Now</a>
+        </div>
+    </nav>
+
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6">Our <span class="text-emerald-600">Impact</span> in Action</h1>
+            <p class="text-gray-500 text-xl max-w-3xl mx-auto leading-relaxed">
+                We focus on high-yield, sustainable projects that empower communities to thrive independently. Explore our four main pillars of change.
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-4 mt-12">
+                <button class="bg-emerald-600 text-white px-6 py-2 rounded-full font-semibold shadow-md">All Projects</button>
+                <button class="bg-white border border-gray-200 text-gray-600 px-6 py-2 rounded-full font-semibold category-pill transition">Water & Sanitation</button>
+                <button class="bg-white border border-gray-200 text-gray-600 px-6 py-2 rounded-full font-semibold category-pill transition">Education</button>
+                <button class="bg-white border border-gray-200 text-gray-600 px-6 py-2 rounded-full font-semibold category-pill transition">Healthcare</button>
+                <button class="bg-white border border-gray-200 text-gray-600 px-6 py-2 rounded-full font-semibold category-pill transition">Emergency Relief</button>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="py-16 container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            
+            <div class="project-card bg-white rounded-[2.5rem] overflow-hidden shadow-xl border border-gray-100 flex flex-col">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=2069" class="h-64 w-full object-cover" alt="Clean Water Well">
+                    <span class="absolute top-6 left-6 bg-blue-600 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase">Health</span>
+                </div>
+                <div class="p-8 flex-grow">
+                    <h3 class="text-2xl font-bold mb-4">The Blue Horizon Initiative</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Implementing solar-powered water filtration systems in rural Kenya, providing 50,000+ residents with permanent access to safe drinking water.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center text-sm font-semibold text-emerald-600">
+                            <i class="fas fa-chart-line mr-2"></i> 82% Completion
+                        </div>
+                        <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+                            <div class="bg-emerald-500 h-full w-[82%]"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-8 pt-0 mt-auto">
+                    <a href="donate.html" class="block text-center border-2 border-emerald-600 text-emerald-600 font-bold py-3 rounded-xl hover:bg-emerald-600 hover:text-white transition">Fund This Project</a>
+                </div>
+            </div>
+
+            <div class="project-card bg-white rounded-[2.5rem] overflow-hidden shadow-xl border border-gray-100 flex flex-col">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2132" class="h-64 w-full object-cover" alt="School Classroom">
+                    <span class="absolute top-6 left-6 bg-purple-600 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase">Education</span>
+                </div>
+                <div class="p-8 flex-grow">
+                    <h3 class="text-2xl font-bold mb-4">Digital Seeds Program</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Providing high-speed satellite internet and tablets to five remote schools in Peru, connecting 1,200 students to global learning resources.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center text-sm font-semibold text-emerald-600">
+                            <i class="fas fa-chart-line mr-2"></i> 45% Completion
+                        </div>
+                        <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+                            <div class="bg-emerald-500 h-full w-[45%]"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-8 pt-0 mt-auto">
+                    <a href="donate.html" class="block text-center border-2 border-emerald-600 text-emerald-600 font-bold py-3 rounded-xl hover:bg-emerald-600 hover:text-white transition">Fund This Project</a>
+                </div>
+            </div>
+
+            <div class="project-card bg-white rounded-[2.5rem] overflow-hidden shadow-xl border border-gray-100 flex flex-col">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=2070" class="h-64 w-full object-cover" alt="Emergency Relief">
+                    <span class="absolute top-6 left-6 bg-red-600 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase">Emergency</span>
+                </div>
+                <div class="p-8 flex-grow">
+                    <h3 class="text-2xl font-bold mb-4">Rapid Response: Monsoon Relief</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Delivering critical food kits, medical supplies, and temporary shelter to families displaced by recent flooding in Southeast Asia.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center text-sm font-semibold text-emerald-600">
+                            <i class="fas fa-chart-line mr-2"></i> 95% Completion
+                        </div>
+                        <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+                            <div class="bg-emerald-500 h-full w-[95%]"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-8 pt-0 mt-auto">
+                    <a href="donate.html" class="block text-center border-2 border-emerald-600 text-emerald-600 font-bold py-3 rounded-xl hover:bg-emerald-600 hover:text-white transition">Fund This Project</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-24 bg-gray-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold mb-8">Our Data-Driven Commitment</h2>
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                        We don't just launch projects; we monitor them for years. Every initiative listed here undergoes a 24-month audit post-completion to ensure the infrastructure is maintained and the community is benefiting as planned.
+                    </p>
+                    <ul class="space-y-6">
+                        <li class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Quarterly transparency reports sent to all donors.</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Direct coordination with local grassroots leaders.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 p-10 rounded-3xl border border-gray-700">
+                    <h4 class="text-2xl font-bold mb-6 text-emerald-400">2026 Focus</h4>
+                    <p class="text-sm text-gray-400 mb-6">Current allocation of project funds:</p>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between text-sm mb-2"><span>Clean Water</span><span>40%</span></div>
+                            <div class="w-full bg-gray-700 h-2 rounded-full overflow-hidden"><div class="bg-blue-500 h-full w-[40%]"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2"><span>Women's Education</span><span>35%</span></div>
+                            <div class="w-full bg-gray-700 h-2 rounded-full overflow-hidden"><div class="bg-purple-500 h-full w-[35%]"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2"><span>Medical Facilities</span><span>25%</span></div>
+                            <div class="w-full bg-gray-700 h-2 rounded-full overflow-hidden"><div class="bg-emerald-500 h-full w-[25%]"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-950 text-white py-16">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="col-span-1 md:col-span-2">
+                <h4 class="text-2xl font-bold mb-6 text-emerald-500">HopeBright</h4>
+                <p class="text-gray-400 max-w-sm mb-6">Building sustainable futures through transparency and localized action. Join us in our mission.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-emerald-600 transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-emerald-600 transition"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div>
+                <h5 class="font-bold mb-6">Quick Links</h5>
+                <ul class="space-y-4 text-gray-400">
+                    <li><a href="about.html" class="hover:text-white">Our Board</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition">Volunteer</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-6">Join the Movement</h5>
+                <form class="flex" onsubmit="event.preventDefault(); alert('Joined!');">
+                    <input type="email" placeholder="Email" class="bg-gray-900 border border-gray-800 rounded-l-lg px-4 py-2 w-full focus:outline-none focus:border-emerald-500" required>
+                    <button class="bg-emerald-600 px-4 py-2 rounded-r-lg hover:bg-emerald-500 transition">→</button>
+                </form>
+            </div>
+        </div>
+        <div class="container mx-auto px-6 mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+            <p>&copy; 2026 HopeBright Charity Organization. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const menuIcon = document.getElementById('menu-icon');
+            const body = document.body;
+
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+
+            if (menu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+                body.classList.remove('overflow-hidden');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+                body.classList.add('overflow-hidden');
+            }
+        }
+    </script>
+</body>
+</html>

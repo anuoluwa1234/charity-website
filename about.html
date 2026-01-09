@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Mission | HopeBright Charity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #059669, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Prevent scrolling when mobile menu is open */
+        .overflow-hidden { overflow: hidden; }
+    </style>
+</head>
+<body class="bg-slate-50 text-gray-900">
+
+    <nav class="glass-nav sticky top-0 z-50 border-b border-gray-100">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-emerald-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">H</div>
+                <span class="text-2xl font-bold tracking-tight text-gray-900">HopeBright</span>
+            </div>
+            
+            <div class="hidden lg:flex space-x-10 items-center font-medium text-gray-600">
+                <a href="index.html" class="hover:text-emerald-600 transition">Home</a>
+                <a href="about.html" class="text-emerald-600">Our Mission</a>
+                <a href="projects.html" class="hover:text-emerald-600 transition">Projects</a>
+                <a href="contact.html" class="hover:text-emerald-600 transition">Contact</a>
+                <a href="donate.html" class="bg-gray-900 text-white px-7 py-3 rounded-full hover:bg-emerald-600 transition-all shadow-lg">Donate Now</a>
+            </div>
+
+            <button id="menu-btn" onclick="toggleMobileMenu()" class="lg:hidden text-gray-900 text-2xl focus:outline-none z-50">
+                <i id="menu-icon" class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <div id="mobileMenu" class="fixed inset-0 bg-white z-40 hidden flex-col items-center justify-center space-y-8 text-center p-6 lg:hidden">
+            <a href="index.html" onclick="toggleMobileMenu()" class="text-3xl font-bold hover:text-emerald-600">Home</a>
+            <a href="about.html" onclick="toggleMobileMenu()" class="text-3xl font-bold text-emerald-600">Our Mission</a>
+            <a href="projects.html" onclick="toggleMobileMenu()" class="text-3xl font-bold hover:text-emerald-600">Projects</a>
+            <a href="contact.html" onclick="toggleMobileMenu()" class="text-3xl font-bold hover:text-emerald-600">Contact</a>
+            <a href="donate.html" onclick="toggleMobileMenu()" class="w-full max-w-xs bg-emerald-600 text-white py-4 rounded-xl text-xl font-bold">Donate Now</a>
+        </div>
+    </nav>
+
+    <section class="py-24 bg-white relative overflow-hidden">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-6">Built on <span class="gradient-text">Trust</span> & <span class="gradient-text">Action</span>.</h1>
+            <p class="text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed">
+                Founded in 2010, HopeBright serves as a bridge between global resources and local needs. We aren't just a charity; we are a movement for sustainable independence.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <h2 class="text-3xl font-bold border-l-4 border-emerald-600 pl-4">Our Core Philosophy</h2>
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2">Transparency First</h4>
+                            <p class="text-gray-600">Every dollar donated is tracked via our digital ledger, accessible to all our primary sponsors. We believe donors deserve to see their impact in real-time.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2">Sustainable Autonomy</h4>
+                            <p class="text-gray-600">We don't create dependency. We build infrastructure—wells, schools, and irrigation—that communities own and operate for generations.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1524069290683-0457abfe42c3?q=80&w=2070" class="rounded-[2.5rem] shadow-2xl" alt="Global Impact">
+                    <div class="absolute -bottom-10 -right-10 bg-white p-8 rounded-3xl shadow-xl hidden lg:block border border-gray-100 text-center">
+                        <p class="text-emerald-600 font-bold text-4xl mb-1">94%</p>
+                        <p class="text-gray-500 text-sm font-medium uppercase tracking-wider">Efficiency Rating</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">The Leadership Team</h2>
+                <div class="w-20 h-1.5 bg-emerald-600 mx-auto rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+                <div class="text-center group">
+                    <div class="relative overflow-hidden rounded-2xl mb-6">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976" class="w-full h-96 object-cover grayscale group-hover:grayscale-0 transition duration-500" alt="Sarah Jenkins">
+                    </div>
+                    <h3 class="text-2xl font-bold">Sarah Jenkins</h3>
+                    <p class="text-emerald-600 font-medium">Founder & CEO</p>
+                </div>
+                <div class="text-center group">
+                    <div class="relative overflow-hidden rounded-2xl mb-6">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974" class="w-full h-96 object-cover grayscale group-hover:grayscale-0 transition duration-500" alt="David Chen">
+                    </div>
+                    <h3 class="text-2xl font-bold">David Chen</h3>
+                    <p class="text-emerald-600 font-medium">Director of Logistics</p>
+                </div>
+                <div class="text-center group">
+                    <div class="relative overflow-hidden rounded-2xl mb-6">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961" class="w-full h-96 object-cover grayscale group-hover:grayscale-0 transition duration-500" alt="Elena Rodriguez">
+                    </div>
+                    <h3 class="text-2xl font-bold">Dr. Elena Rodriguez</h3>
+                    <p class="text-emerald-600 font-medium">Head of Impact Strategy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-950 text-white py-16">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="col-span-1 md:col-span-2">
+                <h4 class="text-2xl font-bold mb-6">HopeBright</h4>
+                <p class="text-gray-400 max-w-sm mb-6">A non-profit organization dedicated to sustainable development and human rights. Transparency is our core value.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-emerald-600 transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-emerald-600 transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-emerald-600 transition"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div>
+                <h5 class="font-bold mb-6">Quick Links</h5>
+                <ul class="space-y-4 text-gray-400">
+                    <li><a href="projects.html" class="hover:text-white transition">Our Projects</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition">Volunteer</a></li>
+                    <li><a href="#" class="hover:text-white transition">Annual Report</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-6">Newsletter</h5>
+                <form class="flex" onsubmit="event.preventDefault(); alert('Subscribed!');">
+                    <input type="email" placeholder="Email" class="bg-gray-900 border border-gray-800 rounded-l-lg px-4 py-2 w-full focus:outline-none focus:border-emerald-500" required>
+                    <button class="bg-emerald-600 px-4 py-2 rounded-r-lg hover:bg-emerald-500 transition">→</button>
+                </form>
+            </div>
+        </div>
+        <div class="container mx-auto px-6 mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+            <p>&copy; 2026 HopeBright Charity Organization. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const menuIcon = document.getElementById('menu-icon');
+            const body = document.body;
+
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+
+            // Handle Icon Toggle (Bars vs X)
+            if (menu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+                body.classList.remove('overflow-hidden');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+                body.classList.add('overflow-hidden');
+            }
+        }
+    </script>
+</body>
+</html>
